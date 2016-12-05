@@ -50,32 +50,3 @@ $ git merge --no-ff release/20121221
 # 到此，这个 release 分支完成了它的使命，可以被删除了
 $ git branch -d release/20121221
 ```
-
-## hotfix 分支
-
-如果我们发现线上的代码（也就是 master）有 bug，但是这个时候我们的 develop 上的有些功能还没完成，还不能发布，这个时候我们可以从 master 分支上开出一个 hotfix 分支（记住：直接在 master 上提交代码是不允许的！），分支名约定为`hotfix/xxx`，在这个分支上修改完 bug 后需要把这个分支同时合并到 master 和 develop 分支。相应操作如下：
-
-```bash
-$ git checkout -b hotfix/xxx master
-# 修完 bug 后
-$ git checkout master
-$ git merge --no-ff hotfix/xxx
-$ git checkout develop
-$ git merge --no-ff hotfix/xxx
-# hotfix 分支完成使命
-$ git branch -d hotfix/xxx
-```
-
-例外：当 hotfix 分支完成，这个时候如果有 release 分支存在，那么这个 hotfix 就应该合并到 release，而不是 develop 分支。
-
-## proj 分支
-
-proj 分支为项目分支，所有的项目分支都从 master 上开出来，约定的分支名为`proj/xxx`。所有的项目定制内容都直接在项目分支上提交。为了保证项目的更新，每当项目有新版本发布时都需要把 master 分支合并到 proj 分支上。相应操作如下：
-
-```bash
-$ git checkout -b proj/xxx master
-# 定制。。。
-# 如果 master 分支有更新
-$ git checkout proj/xxx master
-$ git merge --no-ff master
-```
