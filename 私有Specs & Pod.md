@@ -1,20 +1,20 @@
 # 私有Specs & Pod
 
-## 问题
+# 问题
 团队生产了私有的公共组件，希望通过pod管理，以便于集成到具体项目中  
 但是，私有pod有个问题——难以被其它pod依赖  
 因此通过私有Specs解决
 
-## 私有Specs
+# 私有Specs
 [http://git.flowever.net/component/Specs.git](http://git.flowever.net/component/Specs)
 
-## 私有pod项目
+# 私有pod项目
 目前私有pod项目包括：
 
 1. Github（[Flowever](https://github.com/Flowever)) fork了其他项目，修改.（ 约定打tag格式 `<版本>-flow`，如 "3.1.4-flow" )
 2. Gitlab私有组件
 
-## Q&A
+# Q&A
 ### 1. 私有pod存放在哪？
 Github 或 Gitlab
 
