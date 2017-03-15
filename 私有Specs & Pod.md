@@ -6,7 +6,7 @@
 因此通过私有Specs解决
 
 ## 私有Specs
-http://git.flowever.net/component/Specs.git
+[http://git.flowever.net/component/Specs.git](http://git.flowever.net/component/Specs)
 
 ## 私有pod项目
 目前私有pod项目包括：
