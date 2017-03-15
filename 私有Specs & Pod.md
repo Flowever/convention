@@ -53,7 +53,7 @@ end
 
 #### 3. podspec如何提交到Specs？
 1. 首先本地添加Specs `pod repo add Specs http://git.flowever.net/component/Specs.git`
-2. pod repo push Specs <pod-name>.podspec
+2. `pod repo push Specs <pod-name>.podspec`
 
 
 #### 4. 在Podfile如何使用私有pod？
