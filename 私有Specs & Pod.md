@@ -8,7 +8,7 @@
 ## 私有Specs
 [http://git.flowever.net/component/Specs.git](http://git.flowever.net/component/Specs)
 
-## 私有pod项目
+## 私有pod
 目前私有pod项目包括：
 
 1. Github（[Flowever](https://github.com/Flowever)) fork了其他项目，修改.（ 约定打tag格式 `<版本>-flow`，如 "3.1.4-flow" )
@@ -18,10 +18,10 @@
 #### 1. 私有pod存放在哪？
 Github 或 Gitlab
 
-#### 2. 私有pod的.podspec是怎样的？
+#### 2. 私有pod的podspec是怎样的？
 
 如 SwiftyJSON-flow.podspec  
-在原来SwiftyJSON.podspec基础上，主要改写了`s.name` `s.source`
+在原来SwiftyJSON.podspec基础上，主要改写了`s.name` `s.source`，source可以指向私有仓库
 
 ```ruby
 Pod::Spec.new do |s|
