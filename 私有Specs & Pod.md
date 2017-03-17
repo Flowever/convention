@@ -21,7 +21,7 @@ Github 或 Gitlab
 #### 2. 私有pod的podspec是怎样的？
 
 如 SwiftyJSON-flow.podspec  
-在原来SwiftyJSON.podspec基础上，主要改写了`s.name` `s.source`，source可以指向私有仓库
+在原来SwiftyJSON.podspec基础上，主要改写了`s.name` `s.source` `s.module` `s.module_name`，source可以指向私有仓库
 
 ```ruby
 Pod::Spec.new do |s|
@@ -46,6 +46,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig =  {
         'SWIFT_VERSION' => '3.0',
   }
+  s.module_name = "SwiftyJSON"
 
 end
 
