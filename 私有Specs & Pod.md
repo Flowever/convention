@@ -67,6 +67,8 @@ target 'a target' do
   use_frameworks!
   
   pod 'SwiftyJSON-flow', '~> 3.1.4'
+  pod 'Common', '~> 0.1.0'
+  pod 'Ad', '~> 0.1.0'
 end
 ```
 
