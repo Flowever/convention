@@ -19,44 +19,12 @@
 
 Github 或 Gitlab
 
-#### 2. 私有pod的podspec是怎样的？
-
-如 SwiftyJSON-flow.podspec
-```ruby
-Pod::Spec.new do |s|
-  s.name         = "SwiftyJSON-flow"
-  s.version      = "3.1.4"
-  s.summary      = "SwiftyJSON-flow"
-  s.description  = <<-DESC
-  SwiftyJSON makes it easy to deal with JSON data in Swift
-                   DESC
-
-  s.homepage     = "https://github.com/Flowever/SwiftyJSON"
-  s.license      = "MIT"
-  s.author       = {'luosch' => 'i@lsich.com'}
-
-  s.source       = { :git => "https://github.com/Flowever/SwiftyJSON.git", :tag => "#{s.version}" }
-  s.requires_arc = true
-  s.osx.deployment_target = "10.9"
-  s.ios.deployment_target = "8.0"
-  s.watchos.deployment_target = "2.0"
-  s.tvos.deployment_target = "9.0"
-  s.source_files = "Source/*.swift"
-  s.pod_target_xcconfig =  {
-        'SWIFT_VERSION' => '3.0',
-  }
-  s.module_name = "SwiftyJSON"
-
-end
-
-```
-
-#### 3. podspec如何提交到私有Specs？
+#### 2. podspec如何提交到私有Specs？
 1. 首先本地添加Specs `pod repo add Specs http://git.flowever.net/component/Specs.git`
 2. `pod repo push Specs <pod-name>.podspec`
 
 
-#### 4. 在Podfile如何使用私有pod？
+#### 3. 在Podfile如何使用私有pod？
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -66,12 +34,14 @@ target 'a target' do
   use_frameworks!
   
   pod 'SwiftyJSON-flow', '~> 3.1.4'
+  # 或 pod 'SwiftyJSON-flow', :git => 'https://github.com/Flowever/SwiftyJSON.git', :tag => '3.1.4-fix-something'
+  
   pod 'Common', '~> 0.1.0'
   pod 'Ad', '~> 0.1.0'
 end
 ```
 
-#### 5. 是否解决了私有pod被其它pod依赖的问题？
+#### 4. 是否解决了私有pod被其它pod依赖的问题？
 解决了  
 
 在.podspec依赖私有pod如下
