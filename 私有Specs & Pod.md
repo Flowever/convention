@@ -11,18 +11,17 @@
 ## 私有pod
 目前私有pod项目包括：
 
-1. Github（[Flowever](https://github.com/Flowever)) fork了其他项目，修改.（ 约定打tag格式 `<版本>-flow`，如 "3.1.4-flow" )
+1. Github（[Flowever](https://github.com/Flowever)) fork了其他项目，修改.（ 约定打tag格式 `<版本>-<comment>`，如 "3.1.4-fix-something")
 2. Gitlab私有组件
 
 ## Q&A
 #### 1. 私有pod存放在哪？
+
 Github 或 Gitlab
 
 #### 2. 私有pod的podspec是怎样的？
 
-如 SwiftyJSON-flow.podspec  
-在原来SwiftyJSON.podspec基础上，主要改写了`s.name` `s.module_name` `s.source`，source可以指向私有仓库
-
+如 SwiftyJSON-flow.podspec
 ```ruby
 Pod::Spec.new do |s|
   s.name         = "SwiftyJSON-flow"
@@ -36,7 +35,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = {'luosch' => 'i@lsich.com'}
 
-  s.source       = { :git => "https://github.com/Flowever/SwiftyJSON.git", :tag => "#{s.version}-flow" }
+  s.source       = { :git => "https://github.com/Flowever/SwiftyJSON.git", :tag => "#{s.version}" }
   s.requires_arc = true
   s.osx.deployment_target = "10.9"
   s.ios.deployment_target = "8.0"
@@ -52,7 +51,7 @@ end
 
 ```
 
-#### 3. podspec如何提交到Specs？
+#### 3. podspec如何提交到私有Specs？
 1. 首先本地添加Specs `pod repo add Specs http://git.flowever.net/component/Specs.git`
 2. `pod repo push Specs <pod-name>.podspec`
 
