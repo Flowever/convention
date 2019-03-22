@@ -27,8 +27,8 @@ Github 或 Gitlab
 #### 3. 在Podfile如何使用私有pod？
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
 source 'http://git.flowever.net/component/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 
 target 'a target' do
   use_frameworks!
